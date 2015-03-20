@@ -1,5 +1,4 @@
-Swift Moment
-============
+# SwiftMoment
 
 This framework is inspired by [Moment.js](http://momentjs.com). Its
 objectives are the following:
@@ -10,41 +9,18 @@ objectives are the following:
 - Streamlining getting date components (day, month, etc.) from dates and
   time intervals.
 
-This framework targets iOS 8 and later exclusively.
+Important: This framework targets iOS 8.3, Xcode 6.3 and Swift 1.2 and
+later exclusively.
 
-Installation
-------------
+## Installation
 
-Hopefully at some point there will be a Cocoapods module for this
-library. At the moment, just use the Framework as is in your own
-application.
+SwiftMoment is compatible with [Carthage](http://github.com/Carthage/Carthage) and [CocoaPods](http://cocoapods.org/). With CocoaPods, just add this to your Podfile:
 
-Architecture
-------------
-
-The two most important components of this library are the `Moment` and
-`Duration` structures. `Moment` wraps an `NSDate` instance, while
-`Duration` wraps an `NSTimeInterval` value.
-
-There is also an extension to the `Int` type in Swift, used to create
-`Duration` values directly from an integer value:
-
-```Swift
-let duration = 5.hours + 56.minutes
+```ruby
+pod 'SwiftMoment'
 ```
 
-Both `Moment` and `Duration` comply with the `Comparable` protocols, and
-include all the required operators. In addition, `Moment` instances can
-be substracted from one another (which yields a `Duration`) and
-`Duration` instances can be added to `Moments` to create new moments.
-
-`Moments` and `Durations` are made as immutable as possible.
-
-To create new `Moment` values, use the family of `moment()` functions.
-See below for examples.
-
-Examples
---------
+## Examples
 
 To use this library, just `import SwiftMoment` in your application.
 
@@ -85,20 +61,44 @@ When using a `[String: Int]` dictionary, the order of the keys does not
 matter. Moreover, only the keys above are taken into account, and any
 other information is ignored.
 
-Documentation
--------------
+There is also an extension to the `Int` type in Swift, used to create
+`Duration` values directly from an integer value:
+
+```Swift
+let duration = 5.hours + 56.minutes
+```
+
+## Architecture
+
+The two most important components of this library are the `Moment` and
+`Duration` structures. `Moment` wraps an `NSDate` instance, while
+`Duration` wraps an `NSTimeInterval` value.
+
+Both `Moment` and `Duration` comply with the `Comparable` protocols, and
+include all the required operators. In addition, `Moment` instances can
+be substracted from one another (which yields a `Duration`) and
+`Duration` instances can be added to `Moments` to create new moments.
+
+`Moments` and `Durations` are made as immutable as possible.
+
+## Documentation
 
 The documentation of the code is extracted using
 [Jazzy](https://github.com/realm/jazzy).
 
-Tests
------
+## Tests
 
 Swift Moment includes a suite of tests showing how to use the different
 functions of the framework.
 
-License
--------
+## Contributors
+
+Lots of people are actively helping in the development of this library;
+please check the
+[CONTRIBUTORS](https://github.com/akosma/SwiftMoment/blob/master/CONTRIBUTORS.md)
+file for the full list! Thanks to all :)
+
+## License
 
 This project is distributed under a BSD license. See the LICENSE file
 for details.
